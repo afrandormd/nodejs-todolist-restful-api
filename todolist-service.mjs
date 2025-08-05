@@ -36,4 +36,21 @@ export class TodolistService {
       response.end();
     });
   }
+
+  // Fungsi untuk PUT data Todolist
+  updateTodo(request, response) {
+    request.addListener("data", (data) => {
+      // Persing data buffer -> string
+      const body = JSON.parse(data.toString());
+
+      // Ubah jika datanya ada
+      if (this.todolist[body.id]) {
+        this.todolist[body.id] = body.todo;
+      }
+
+      // Kembalikan response
+      response.write(this.getJsonTodolist());
+      response.end();
+    });
+  }
 }
