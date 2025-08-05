@@ -1,0 +1,12 @@
+{
+  "name": "restful-api-todolist",
+  "version": "1.0.0",
+  "description": "projek latihan NodeJS RESTful API TodoList",
+  "license": "ISC",
+  "author": "randocodes",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
