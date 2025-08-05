@@ -15,6 +15,9 @@ const server = http.createServer((request, response) => {
     // Ketika request method PUT panggil fungsi updateTodo
   } else if (request.method === "PUT") {
     service.updateTodo(request, response);
+    // Ketika request method DELETE panggil fungsi deleteTodo
+  } else if (request.method === "DELETE") {
+    service.deleteTodo(request, response);
   }
 });
 

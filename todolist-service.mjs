@@ -40,12 +40,29 @@ export class TodolistService {
   // Fungsi untuk PUT data Todolist
   updateTodo(request, response) {
     request.addListener("data", (data) => {
-      // Persing data buffer -> string
+      // Parsing data buffer -> string
       const body = JSON.parse(data.toString());
 
       // Ubah jika datanya ada
       if (this.todolist[body.id]) {
         this.todolist[body.id] = body.todo;
+      }
+
+      // Kembalikan response
+      response.write(this.getJsonTodolist());
+      response.end();
+    });
+  }
+
+  // Fungsi untuk DELETE data Todolist
+  deleteTodo(request, response) {
+    request.addListener("data", (data) => {
+      // Parsing data buffer -> string
+      const body = JSON.parse(data.toString());
+
+      // Hapus jika datanya ada
+      if (this.todolist[body.id]) {
+        this.todolist.splice(body.id, 1);
       }
 
       // Kembalikan response
