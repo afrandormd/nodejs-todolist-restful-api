@@ -1,0 +1,13 @@
+name: Update Data Todo
+method: PUT
+url: http://localhost:3001/api/v1/todolist
+body:
+  content: |-
+    {
+      "id": 0,
+      "todo": "Memancing"
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json
