@@ -11,6 +11,11 @@ const swaggerDocument = JSON.parse(raw);
 // Serve Swagger UI files
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+// Routes
+app.get("/", (req, res) => {
+  res.send("NodeJS Todolist RESTful API");
+});
+
 app.listen(PORT, () => {
   console.log(`Swagger UI available at http://localhost:${PORT}/api-docs`);
 });
